@@ -1,13 +1,8 @@
 from dataclasses import dataclass
 from typing import Optional
-
-from sqlalchemy import (
-    Column,
-    Integer,
-    String,
-    Table,
-)
+from sqlalchemy import Column, Integer, String, Table
 from sqlalchemy.orm import registry
+
 
 mapper_registry = registry()
 
