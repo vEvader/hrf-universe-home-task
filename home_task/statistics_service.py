@@ -110,7 +110,7 @@ def update_record(
     session.commit()
 
 
-def get_record(country_code: str, standard_job_id: str):
+def get_record(country_code: str, standard_job_id: str) -> HireStatistics:
     record = session.query(HireStatistics).\
         filter(HireStatistics.country_code == country_code).\
         filter(HireStatistics.standard_job_id == standard_job_id).\
