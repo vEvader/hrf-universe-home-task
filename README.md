@@ -109,5 +109,10 @@ API runing:
 
     uvicorn api:app
 
-swagger: http://127.0.0.1:8000/docs
-redoc: http://127.0.0.1:8000/redoc
+swagger:
+
+    http://127.0.0.1:8000/docs
+
+redoc:
+
+    http://127.0.0.1:8000/redoc

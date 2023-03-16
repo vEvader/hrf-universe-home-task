@@ -1,8 +1,8 @@
 """add_hire_statistics
 
-Revision ID: c3c6f73e81b4
+Revision ID: 3a06d5874e2c
 Revises: 991ecb2bf269
-Create Date: 2023-03-16 01:33:48.129842
+Create Date: 2023-03-17 00:04:13.340780
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'c3c6f73e81b4'
+revision = '3a06d5874e2c'
 down_revision = '991ecb2bf269'
 branch_labels = None
 depends_on = None
@@ -22,9 +22,9 @@ def upgrade() -> None:
     sa.Column('id', sa.String(), nullable=False),
     sa.Column('standard_job_id', sa.String(), nullable=True),
     sa.Column('country_code', sa.String(), nullable=True),
-    sa.Column('min_days_to_hire', sa.Integer(), nullable=True),
-    sa.Column('max_days_to_hire', sa.Integer(), nullable=True),
-    sa.Column('avg_days_to_hire', sa.Integer(), nullable=True),
+    sa.Column('min_days_to_hire', sa.Float(), nullable=True),
+    sa.Column('max_days_to_hire', sa.Float(), nullable=True),
+    sa.Column('avg_days_to_hire', sa.Float(), nullable=True),
     sa.Column('num_postings', sa.Integer(), nullable=False),
     sa.Column('calculation_date', sa.DateTime(), nullable=False),
     sa.PrimaryKeyConstraint('id'),

@@ -1,7 +1,7 @@
 import datetime
 from dataclasses import dataclass
 from typing import Optional
-from sqlalchemy import Column, Integer, String, Table, DateTime
+from sqlalchemy import Column, Integer, Float, String, Table, DateTime
 from sqlalchemy.orm import registry
 
 
@@ -74,9 +74,9 @@ class HireStatistics(Model):
         Column("id", String, nullable=False, primary_key=True),
         Column("standard_job_id", String, nullable=True),
         Column("country_code", String, nullable=True),
-        Column("min_days_to_hire", Integer, nullable=True),
-        Column("max_days_to_hire", Integer, nullable=True),
-        Column("avg_days_to_hire", Integer, nullable=True),
+        Column("min_days_to_hire", Float, nullable=True),
+        Column("max_days_to_hire", Float, nullable=True),
+        Column("avg_days_to_hire", Float, nullable=True),
         Column("num_postings", Integer, nullable=False),
         Column("calculation_date", DateTime, nullable=False),
         schema="public",
@@ -85,8 +85,8 @@ class HireStatistics(Model):
     id: str
     standard_job_id: Optional[str] = None
     country_code: Optional[str] = None
-    min_days_to_hire: Optional[int] = None
-    max_days_to_hire: Optional[int] = None
-    avg_days_to_hire: Optional[int] = None
+    min_days_to_hire: Optional[float] = None
+    max_days_to_hire: Optional[float] = None
+    avg_days_to_hire: Optional[float] = None
     num_postings: int = 0
     calculation_date: DateTime = datetime.datetime.now()
