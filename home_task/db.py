@@ -10,7 +10,3 @@ SessionFactory = scoped_session(pg_session_factory)
 
 def get_session() -> Session:
     return SessionFactory()
-
-
-def get_cursor():
-    return engine.raw_connection().cursor()

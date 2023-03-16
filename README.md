@@ -86,7 +86,7 @@ Response example:
 Install packages with poetry:
 
     python3 -m venv venv
-    . venv/bin/activate   or   .\venv\Scripts\activate 
+    . venv/bin/activate  or  .\venv\Scripts\activate 
     pip install poetry
     POETRY_VIRTUALENVS_CREATE=false poetry install
 
@@ -94,3 +94,20 @@ Create database:
 
     docker-compose up -d
     alembic upgrade head
+
+# Results
+
+Script execution:
+
+    python3 statistics_script.py
+
+or if it is necessary to change threshold of jobs for statistics calculating:
+
+    python3 statistics_script.py -m=7 
+
+API runing:
+
+    uvicorn api:app
+
+swagger: http://127.0.0.1:8000/docs
+redoc: http://127.0.0.1:8000/redoc
